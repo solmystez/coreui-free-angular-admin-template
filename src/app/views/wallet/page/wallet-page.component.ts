@@ -14,6 +14,7 @@ interface IWallet {
 export class WalletPageComponent implements OnInit{
   constructor() {
   }
+  public colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
 
   public wallets: IWallet[] = [
     {
@@ -25,11 +26,11 @@ export class WalletPageComponent implements OnInit{
       balance: 200000
     },
     {
-      name: 'Yiorgos Avraamu',
+      name: 'Yiorgos asd',
       balance: 200000
     },
     {
-      name: 'Yiorgos Avraamu',
+      name: 'Yiorgos ',
       balance: 200000
     },
   ]
