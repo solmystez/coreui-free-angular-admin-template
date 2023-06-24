@@ -1,9 +1,67 @@
-<c-card>
-    <c-card-header>
-        <p>Wallet Pages</p>
+<c-row>
+    <c-col xs>
+      <c-card class="mb-4">
+        <c-card-header>Wallets</c-card-header>
+        <c-card-body>
+          <table cTableColor="danger">
+            <thead cTableColor="danger">
+              <tr>
+                <th class="text-center">
+                  <svg cIcon name="cilPeople"></svg>
+                  Action
+                </th>
+                <th >Wallet Name</th>
+                <th class="text-center">Balance</th>
+                <!-- <th class="text-center">Country</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let wallet of wallets; index as i" cTableColor="primary">
+                <td class="text-center">
+                    <button cButton color="primary" variant="outline">Edit</button>
+                    <button cButton color="secondary" variant="outline">Delete</button>
+                </td>
+                <td> {{ wallet.name }} </td>
+                <td> {{ wallet.balance }} </td>
+              </tr>
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
 
-    </c-card-header>
-    <c-card-body>
-
-    </c-card-body>
-</c-card>
+  <!-- <c-nav variant="underline">
+  <c-nav-item>
+    <a [active]="true" [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="0" cNavLink>
+      Home
+    </a>
+  </c-nav-item>
+  <c-nav-item>
+    <a [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="1" cNavLink>
+      Profile
+    </a>
+  </c-nav-item>
+  <c-nav-item>
+    <a [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="2" cNavLink>
+      Contact
+    </a>
+  </c-nav-item>
+</c-nav>
+<c-tab-content #tabContent="cTabContent" [activeTabPaneIdx]="1">
+  <c-tab-pane class="p-3">
+    This is some placeholder content the <strong>Home</strong> tab's associated content. Clicking another tab
+    will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+    content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+  </c-tab-pane>
+  <c-tab-pane class="p-3">
+    This is some placeholder content the <strong>Profile</strong> tab's associated content. Clicking another
+    tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+    content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+  </c-tab-pane>
+  <c-tab-pane *ngIf="tabContent.activeTabPaneIdx > 0" class="p-3">
+    This is some placeholder content the <strong>Contact</strong> tab's associated content. Clicking another tab will
+    toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility
+    and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+  </c-tab-pane>
+</c-tab-content> -->
