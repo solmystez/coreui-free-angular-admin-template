@@ -37,6 +37,7 @@ import {
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { WalletPageComponent } from './views/wallet/page/wallet-page.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
