@@ -75,6 +75,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/wallet/wallet.module').then((m) => m.WalletModule)
       },
+      {
+        path: 'project',
+        loadChildren: () =>
+          import('./views/project/project.module').then((m) => m.ProjectModule)
+      },
     ]
   },
   {

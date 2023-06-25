@@ -16,8 +16,12 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-notes' },
     children: [
       {
-        name: 'Wallet Control',
+        name: 'Wallet List',
         url: '/wallet/page'
+      },
+      {
+        name: 'Project List',
+        url: '/project/page'
       },
     ]
   },
