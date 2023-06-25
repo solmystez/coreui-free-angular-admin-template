@@ -1,0 +1,52 @@
+<c-card cTableColor="danger">
+    <c-card-body>
+        <h5 cCardTitle>Journal</h5>
+        <p cCardText>These page contain list of all <b>journal</b></p>
+        <a (click)="navigateCreate()" [routerLink]="['/journal/store']" cButton class="me-1" color="primary">
+            Create Journal
+        </a>
+        <a (click)="toggleCollapse()" cButton class="me-1" color="primary">Show table List</a>
+        <hr>
+    </c-card-body>
+    <c-card-body>
+        
+        <div [visible]="visible" cCollapse>
+            <c-card class="mb-4 shadow">
+                <c-card-header>Journal</c-card-header>
+                <c-card-body>
+                    <!-- table 1 -->
+                    <table [striped]="true" cTable>
+                        <thead>
+                            <tr>
+                                <th scope="col">#Action</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Code</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Debet</th>
+                                <th scope="col">Credit</th>
+                                <th scope="col">Balance</th>
+                                <th scope="col">Transfer to</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let wallet of wallets;">
+                                <th scope="row">
+                                    <button cButton color="primary" variant="outline">Edit</button>
+                                    <span>&nbsp;</span>
+                                    <button cButton color="danger" variant="outline">Delete</button>
+                                </th>
+                                <td>{{ wallet.name }}</td>
+                                <td>{{ wallet.balance }}</td>
+                                <td>{{ wallet.name }}</td>
+                                <td>{{ wallet.balance }}</td>
+                                <td>{{ wallet.name }}</td>
+                                <td>{{ wallet.balance }}</td>
+                                <td>{{ wallet.name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </c-card-body>
+            </c-card>
+        </div>
+    </c-card-body>
+</c-card>

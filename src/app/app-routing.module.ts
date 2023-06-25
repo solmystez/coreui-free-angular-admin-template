@@ -80,6 +80,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/project/project.module').then((m) => m.ProjectModule)
       },
+      {
+        path: 'journal',
+        loadChildren: () =>
+          import('./views/journal/journal.module').then((m) => m.JournalModule)
+      },
     ]
   },
   {
