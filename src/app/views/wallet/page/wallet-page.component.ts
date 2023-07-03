@@ -12,6 +12,11 @@ interface IWallet {
   styleUrls: ['./wallet-page.component.scss']
 })
 export class WalletPageComponent implements OnInit{
+
+  id: any;
+  walletName?: string;
+  walletBalance?: number;
+
   constructor() {
   }
   public colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];

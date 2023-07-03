@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { WalletServiceModule } from '../../shared/service/wallet.services';
+import { WalletService } from '../../shared/service/wallet.services';
 import { ButtonModule, CardModule, DropdownModule, FormModule, GridModule, NavModule, TableModule, TabsModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { WalletPageComponent } from './page/wallet-page.component';
@@ -13,7 +13,6 @@ import { WalletPageComponent } from './page/wallet-page.component';
 ],
   imports: [
     CommonModule,
-    WalletServiceModule,
     CardModule,
     ButtonModule,
     TableModule,
@@ -21,4 +20,5 @@ import { WalletPageComponent } from './page/wallet-page.component';
   ]
 })
 export class WalletModule {
+  
 }
