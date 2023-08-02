@@ -1,6 +1,6 @@
 <c-card cTableColor="danger">
     <c-card-body>
-        <h5 cCardTitle>Journal</h5>
+        <h5 cCardTitle>Journalasdadsadsads</h5>
         <p cCardText>These page contain list of all <b>journal</b></p>
         <a (click)="navigateCreate()" [routerLink]="['/journal/store']" cButton class="me-1" color="primary">
             Create Journal
@@ -9,44 +9,47 @@
         <hr>
     </c-card-body>
     <c-card-body>
-        
-        <div [visible]="visible" cCollapse>
-            <c-card class="mb-4 shadow">
-                <c-card-header>Journal</c-card-header>
-                <c-card-body>
-                    <!-- table 1 -->
-                    <table [striped]="true" cTable>
-                        <thead>
-                            <tr>
-                                <th scope="col">#Action</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Code</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Debet</th>
-                                <th scope="col">Credit</th>
-                                <th scope="col">Balance</th>
-                                <th scope="col">Transfer to</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let wallet of wallets;">
-                                <th scope="row">
-                                    <button cButton color="primary" variant="outline">Edit</button>
-                                    <span>&nbsp;</span>
-                                    <button cButton color="danger" variant="outline">Delete</button>
-                                </th>
-                                <td>{{ wallet.name }}</td>
-                                <td>{{ wallet.balance }}</td>
-                                <td>{{ wallet.name }}</td>
-                                <td>{{ wallet.balance }}</td>
-                                <td>{{ wallet.name }}</td>
-                                <td>{{ wallet.balance }}</td>
-                                <td>{{ wallet.name }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </c-card-body>
-            </c-card>
-        </div>
+        <img cCardImg="top" src="./assets/img/angular.jpg">
+        <h5 cCardTitle><b>Event Name</b></h5> 
+        <br><br>
+        <h6 cCardSubtitle class="mb-2 text-medium-emphasis">
+            KATEGORI*
+        </h6>
+        <br>
+        <c-row>
+            <c-col>
+                <p><b>Penyelenggara</b></p>
+            </c-col>
+            <c-col>
+                <p><b>Tanggal & Waktu</b></p>
+            </c-col>
+            <c-col>
+                <p><b>Lokasi</b></p>
+            </c-col>
+        </c-row>
+        <br><br><br><br>
+        <h5 cCardTitle><b>Input Group Link*</b></h5>
+        <c-nav variant="tabs">
+            <a [active]="true" [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="0" cNavLink>Home</a>
+            <a [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="1" cNavLink>Profile</a>
+            <a [cTabContent]="tabContent" [routerLink] [tabPaneIdx]="2" cNavLink>Contact</a>
+        </c-nav>
+        <c-tab-content #tabContent="cTabContent">
+            <c-tab-pane class="p-3">
+                This is some placeholder content the <strong>Home</strong> tab's associated content. Clicking another tab
+                will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+                content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+            </c-tab-pane>
+            <c-tab-pane class="p-3">
+                This is some placeholder content the <strong>Profile</strong> tab's associated content. Clicking another
+                tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+                content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+            </c-tab-pane>
+            <c-tab-pane class="p-3">
+                This is some placeholder content the <strong>Contact</strong> tab's associated content. Clicking another
+                tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the
+                content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+            </c-tab-pane>
+        </c-tab-content>
     </c-card-body>
 </c-card>

@@ -35,6 +35,7 @@ import {
   TabsModule,
   UtilitiesModule,
   TableModule,
+  CarouselModule,
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
@@ -65,18 +66,16 @@ const APP_CONTAINERS = [
     UtilitiesModule,
     ButtonGroupModule,
     ReactiveFormsModule,
-    SidebarModule,
     SharedModule,
     TabsModule,
     ListGroupModule,
     ProgressModule,
     BadgeModule,
-    ListGroupModule,
     CardModule,
     NgScrollbarModule,
     TableModule,
-    NavModule, 
-    TabsModule
+    NavModule,
+    CarouselModule,
   ],
   providers: [
     {

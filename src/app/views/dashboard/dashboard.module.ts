@@ -7,9 +7,13 @@ import {
   ButtonGroupModule,
   ButtonModule,
   CardModule,
+  CarouselComponent,
+  CarouselModule,
+  DropdownModule,
   FormModule,
   GridModule,
   NavModule,
+  NavbarModule,
   ProgressModule,
   TableModule,
   TabsModule
@@ -40,7 +44,10 @@ import { WidgetsModule } from '../widgets/widgets.module';
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    WidgetsModule,
+    CarouselModule,
+    NavbarModule,
+    DropdownModule,
   ],
   declarations: [DashboardComponent]
 })

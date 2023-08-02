@@ -85,6 +85,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/journal/journal.module').then((m) => m.JournalModule)
       },
+      {
+        path: 'ticket',
+        loadChildren: () =>
+          import('./views/ticket/ticket.module').then((m) => m.TicketModule)
+      },
     ]
   },
   {

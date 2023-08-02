@@ -1,115 +1,149 @@
-<app-widgets-dropdown></app-widgets-dropdown>
-<c-card class="mb-4">
-  <c-card-body>
-    <c-row>
-      <c-col sm="5">
-        <h4 class="card-title mb-0" id="traffic">Traffic</h4>
-        <div class="small text-medium-emphasis">January - December 2021</div>
-      </c-col>
-      <c-col class="d-none d-md-block" sm="7">
-        <button cButton class="float-end" color="primary">
-          <svg cIcon name="cilCloudDownload"></svg>
-        </button>
-        <form [formGroup]="trafficRadioGroup">
-          <c-button-group class="float-end me-3" role="group">
-            <input
-              class="btn-check"
-              formControlName="trafficRadio"
-              type="radio"
-              value="Day"
-            />
-            <label
-              (click)="setTrafficPeriod('Day')"
-              cButton
-              cFormCheckLabel
-              color="secondary"
-              variant="outline"
-            >Day</label>
+<!-- <app-widgets-dropdown></app-widgets-dropdown> -->
+<!-- <app-widgets-brand [withCharts]="true"></app-widgets-brand> -->
 
-            <input
-              class="btn-check"
-              formControlName="trafficRadio"
-              type="radio"
-              value="Month"
-            />
-            <label
-              (click)="setTrafficPeriod('Month')"
-              cButton
-              cFormCheckLabel
-              color="secondary"
-              variant="outline"
-            >Month</label>
+<!-- <app-carousels></app-carousels> -->
 
-            <input
-              class="btn-check"
-              formControlName="trafficRadio"
-              type="radio"
-              value="Year"
-            />
-            <label
-              (click)="setTrafficPeriod('Year')"
-              cButton
-              cFormCheckLabel
-              color="secondary"
-              variant="outline"
-            >Year</label>
-          </c-button-group>
-        </form>
-      </c-col>
-    </c-row>
-    <c-chart
-      [data]="mainChart.data"
-      [height]="300"
-      [ngStyle]="{ 'marginTop.px': 40 }"
-      [options]="mainChart.options"
-      [type]="mainChart.type"
-    >
-      Main chart
-    </c-chart>
-  </c-card-body>
-  <c-card-footer>
-    <c-row class="text-center" [md]="5" [xs]="1">
-      <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Visits</div>
-        <strong>29.703 Users (40%)</strong>
-        <c-progress class="mt-2" thin>
-          <c-progress-bar color="success" value="40"></c-progress-bar>
-        </c-progress>
-      </c-col>
-      <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Unique</div>
-        <strong>24.093 Users (20%)</strong>
-        <c-progress class="mt-2" thin>
-          <c-progress-bar color="info" value="20"></c-progress-bar>
-        </c-progress>
-      </c-col>
-      <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Page views</div>
-        <strong>78.706 Views (60%)</strong>
-        <c-progress class="mt-2" thin>
-          <c-progress-bar color="warning" value="60"></c-progress-bar>
-        </c-progress>
-      </c-col>
-      <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">New Users</div>
-        <strong>22.123 Users (80%)</strong>
-        <c-progress class="mt-2" thin>
-          <c-progress-bar color="danger" value="80"></c-progress-bar>
-        </c-progress>
-      </c-col>
-      <c-col class="mb-sm-2 mb-0">
-        <div class="text-medium-emphasis">Bounce Rate</div>
-        <strong>Average Rate (40.15%)</strong>
-        <c-progress class="mt-2" thin>
-          <c-progress-bar value="40"></c-progress-bar>
-        </c-progress>
-      </c-col>
-    </c-row>
-  </c-card-footer>
-</c-card>
 
-<app-widgets-brand [withCharts]="true"></app-widgets-brand>
+<c-row>
+  <c-col xs>
+    <c-card>
+      
 
+      <c-card-header>asd</c-card-header>
+      <c-card-body>
+        asd
+        
+        <c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
+          <c-carousel-inner>
+            <c-carousel-item *ngFor="let slide of slides">
+              <img [src]="slide.src" alt="{{slide.title}}" class="d-block w-100" loading="lazy" />
+            </c-carousel-item>
+          </c-carousel-inner>
+        </c-carousel>
+
+
+        <c-card class="mb-3" >
+          <c-row class="g-0">
+            <c-col [md]="4">
+              <img cCardImg="top" [cCardImg] src="./assets/img/a.jpeg">
+            </c-col>
+            <c-card-body cCol [md]="8">
+              <h5 cCardTitle>
+                <b>
+                  Create Your own Event !
+                </b>
+              </h5>
+              <p cCardText>
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer. asd
+              </p>
+              <button class="btn btn-primary" [routerLink]="['/ticket/page']"
+                  routerLinkActive="router-link-active"
+                >Get Started</button>
+            </c-card-body>
+
+          </c-row>
+        </c-card>
+        
+
+        <c-card class="mb-3">
+          <c-row class="g-0">
+            <c-card-body cCol [md]="8">
+              <h5 cCardTitle>
+                <b>
+                  Create Your own Event !
+                </b>
+              </h5>
+              <p cCardText>
+                This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.
+              </p>
+              <button class="btn btn-primary">Get Started</button>
+            </c-card-body>
+            <c-col [md]="4">
+              <img cCardImg="top" [cCardImg] src="./assets/img/a.jpeg">
+            </c-col>
+          </c-row>
+        </c-card>
+
+        <br><br>
+        <h5 cCardTitle>POPULAR THIS YEAR !</h5>
+
+        <c-row [gutter]="3" class="mb-3" [md]="4" [xs]="1">
+          <c-col *ngFor="let card of cards">
+            <c-card class="h-100">
+              <img cCardImg="top" src="./assets/img/angular.jpg">
+              <c-card-body>
+                <h5 cCardTitle>Card title</h5>
+                <p cCardText>
+                  {{card.body}}
+                </p>
+              </c-card-body>
+            </c-card>
+          </c-col>
+        </c-row>
+
+        <br><br>
+        <h5 cCardTitle>POPULAR AT
+
+          <c-dropdown>
+            <button cButton cDropdownToggle color="secondary">
+              Dropdown button
+            </button>
+            <ul cDropdownMenu>
+              <li><a [routerLink]="[]" cDropdownItem>Action</a></li>
+              <li><a [routerLink]="[]" cDropdownItem>Another action</a></li>
+              <li><a [routerLink]="[]" cDropdownItem>Something else here</a></li>
+            </ul>
+          </c-dropdown>
+        </h5>
+        
+        <br>
+        <c-row [gutter]="3" class="mb-3" [md]="4" [xs]="1">
+          <c-col *ngFor="let card of cards">
+            <c-card class="h-100">
+              <img cCardImg="top" src="./assets/img/angular.jpg">
+              <c-card-body>
+                <h5 cCardTitle>Card title</h5>
+                <p cCardText>
+                  {{card.body}}
+                </p>
+              </c-card-body>
+            </c-card>
+          </c-col>
+        </c-row>
+        <br>
+        <!-- <c-navbar colorScheme="light" expand="lg" class="bg-light">
+          <c-container fluid>
+            <a cNavbarBrand href="https://coreui.io/angular/" target="_blank">
+              Navbar
+            </a>
+            <button [cNavbarToggler]="collapseRef"></button>
+            <div #collapseRef="cCollapse" navbar cCollapse>
+              <c-navbar-nav class="me-auto mb-2 mb-lg-0">
+                <c-nav-item>
+                  <a cNavLink active>Home</a>
+                </c-nav-item>
+                <c-nav-item>
+                  <a cNavLink>Features</a>
+                </c-nav-item>
+                <c-nav-item>
+                  <a cNavLink>Pricing</a>
+                </c-nav-item>
+                <c-nav-item>
+                  <a cNavLink disabled>Disabled</a>
+                </c-nav-item>
+              </c-navbar-nav>
+            </div>
+          </c-container>
+        </c-navbar> -->
+
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+<!-- 
 <c-row>
   <c-col xs>
     <c-card class="mb-4">
@@ -119,17 +153,13 @@
           <c-col md="6" xl="6" xs="12">
             <c-row>
               <c-col sm="6">
-                <div
-                  class="border-start border-start-4 border-start-info py-1 px-3 mb-3"
-                >
+                <div class="border-start border-start-4 border-start-info py-1 px-3 mb-3">
                   <div class="text-medium-emphasis small">New Clients</div>
                   <div class="fs-5 fw-semibold">9,123</div>
                 </div>
               </c-col>
               <c-col sm="6">
-                <div
-                  class="border-start border-start-4 border-start-danger py-1 px-3 mb-3"
-                >
+                <div class="border-start border-start-4 border-start-danger py-1 px-3 mb-3">
                   <div class="text-medium-emphasis small">
                     Recurring Clients
                   </div>
@@ -346,13 +376,7 @@
               </div>
             </div>
             <div class="divider d-flex justify-content-center">
-              <button
-                cButton
-                class="text-muted btn-link"
-                color="transparent"
-                size="sm"
-                type="button"
-              >
+              <button cButton class="text-muted btn-link" color="transparent" size="sm" type="button">
                 <svg cIcon name="cil-options"></svg>
               </button>
             </div>
@@ -361,87 +385,4 @@
       </c-card-body>
     </c-card>
   </c-col>
-</c-row>
-<c-row>
-  <c-col xs>
-    <c-card class="mb-4">
-      <c-card-header>Users</c-card-header>
-      <c-card-body>
-        <table
-          [hover]="true"
-          [responsive]="true"
-          [striped]="true"
-          align="middle"
-          cTable
-          class="mb-0 border"
-        >
-          <thead cTableColor="light">
-            <tr>
-              <th class="text-center">
-                <svg cIcon name="cilPeople"></svg>
-              </th>
-              <th>User</th>
-              <th class="text-center">Country</th>
-              <th>Usage</th>
-              <th class="text-center">Payment Method</th>
-              <th>Activity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let user of users; index as i">
-              <td class="text-center">
-                <c-avatar
-                  size="md"
-                  src="{{ user.avatar }}"
-                  status="{{ user.status }}"
-                ></c-avatar>
-              </td>
-              <td>
-                <div>{{ user.name }}</div>
-                <div class="small text-medium-emphasis text-nowrap">
-                  <span>
-                    {{ user.state }} | Registered: {{ user.registered }}
-                  </span>
-                </div>
-              </td>
-              <td class="text-center">
-                <svg
-                  cIcon
-                  id="{{ user.country + user.name }}"
-                  name="cif{{ user.country }}"
-                  size="xl"
-                  title="{{ user.country }}"
-                ></svg>
-              </td>
-              <td>
-                <div class="d-flex justify-content-between">
-                  <div class="float-start">
-                    <strong>{{ user.usage }}%</strong>
-                  </div>
-                  <div class="float-end ms-1 text-nowrap">
-                    <small class="text-medium-emphasis">
-                      {{ user.period }}
-                    </small>
-                  </div>
-                </div>
-                <c-progress thin>
-                  <c-progress-bar
-                    [value]="user.usage"
-                    color="{{ user.color }}"
-                  ></c-progress-bar>
-                </c-progress>
-              </td>
-              <td class="text-center">
-                <svg cIcon name="cibCc{{ user.payment }}" size="xl"></svg>
-              </td>
-              <td>
-                <div class="small text-medium-emphasis">Last login</div>
-                <div class="fw-semibold text-nowrap">{{ user.activity }}</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </c-card-body>
-    </c-card>
-  </c-col>
-</c-row>
+</c-row> -->
